@@ -1,8 +1,16 @@
 import Head from 'next/head';
 
-import { NavigationBar, Container } from './styles';
+import {
+	NavigationBar,
+	Container,
+	MainContainer,
+	Header,
+	ToolCard,
+} from './styles';
 
-import Arrow from '../assets/arrow.svg';
+import ArrowLeft from '../assets/arrow_left.svg';
+import ArrowRight from '../assets/arrow_right.svg';
+
 import ToolsIcon from '../assets/tools.svg';
 
 const Home: React.FC = () => (
@@ -23,17 +31,37 @@ const Home: React.FC = () => (
 				</option>
 				<option value="en">en</option>
 			</select>
-			<Arrow />
 		</NavigationBar>
 
-		<main>
-			<header>
-				<ToolsIcon />
-				<h1>
-					Formatador de <br /> texto online
-				</h1>
-			</header>
-		</main>
+		<Header>
+			<ArrowRight />
+			<h1>
+				Formatador de <br /> Texto Online
+			</h1>
+			<ArrowLeft />
+		</Header>
+
+		<MainContainer>
+			<ToolsIcon />
+			<ToolCard>
+				<li>
+					<ArrowRight />
+					<span>Contador de Palavras</span>
+				</li>
+				<li>
+					<ArrowRight />
+					<span>Formatador de Palavras para maiusculo</span>
+				</li>
+				<li>
+					<ArrowRight />
+					<span>Formatador de Palavras para minusculo</span>
+				</li>
+				<li>
+					<ArrowRight />
+					<span>Fomatador de Palavras para priemeira letra maiuscula</span>
+				</li>
+			</ToolCard>
+		</MainContainer>
 	</Container>
 );
 

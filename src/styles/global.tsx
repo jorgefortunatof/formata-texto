@@ -1,12 +1,18 @@
 import { createGlobalStyle } from 'styled-components';
+import colors from './colors';
 
 export default createGlobalStyle`
-  html,
-  body {
+	*{
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
+
+  body, html {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 			Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-		color: black;
-  }
+		color: ${colors.lightest};
+	}
 
 	h1{
 		font-size: 32px;
@@ -28,10 +34,4 @@ export default createGlobalStyle`
 	a:hover{
 		cursor: pointer;
 	}
-
-  * {
-		box-sizing: border-box;
-		padding: 0;
-    margin: 0;
-  }
 `;
