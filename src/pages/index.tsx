@@ -5,8 +5,10 @@ import {
 	Container,
 	MainContainer,
 	Header,
-	ToolCard,
+	ToolsCard,
 } from './styles';
+
+import TextFormat from '../components/TextFormat';
 
 import ArrowLeft from '../assets/arrow_left.svg';
 import ArrowRight from '../assets/arrow_right.svg';
@@ -42,25 +44,35 @@ const Home: React.FC = () => (
 		</Header>
 
 		<MainContainer>
-			<ToolsIcon />
-			<ToolCard>
-				<li>
-					<ArrowRight />
-					<span>Contador de Palavras</span>
-				</li>
-				<li>
-					<ArrowRight />
-					<span>Formatador de Palavras para maiusculo</span>
-				</li>
-				<li>
-					<ArrowRight />
-					<span>Formatador de Palavras para minusculo</span>
-				</li>
-				<li>
-					<ArrowRight />
-					<span>Fomatador de Palavras para priemeira letra maiuscula</span>
-				</li>
-			</ToolCard>
+			<ToolsCard>
+				<h1>Nossas Ferramentas</h1>
+				<ToolsIcon />
+
+				<ul>
+					<a href="/">
+						<ArrowRight />
+						<span>Formatador de Textos</span>
+					</a>
+					<a href="/">
+						<ArrowRight />
+						<span>Contador de letras, palavras e linhas</span>
+					</a>
+					<a href="/">
+						<ArrowRight />
+						<span>Gerador de textos em negrito</span>
+					</a>
+					<a href="/">
+						<ArrowRight />
+						<span>Gerador de textos em itálico</span>
+					</a>
+					<a href="/">
+						<ArrowRight />
+						<span>Gerador de textos invertidos</span>
+					</a>
+				</ul>
+			</ToolsCard>
+
+			<TextFormat />
 		</MainContainer>
 	</Container>
 );

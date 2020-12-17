@@ -64,13 +64,48 @@ export const Header = styled.header`
 `;
 
 export const MainContainer = styled.main`
+	min-height: 100vh;
+
 	background-image: url('${ToolsBg}');
 	background-repeat: no-repeat;
 	background-position-x: right;
 `;
 
-export const ToolCard = styled.div`
-	li {
+export const ToolsCard = styled.div`
+	max-width: 480px;
+	padding: 20px 40px;
+	border-radius: 0 12px 12px 0;
+	background-color: ${colors.darker};
+	box-shadow: 4px 6px 6px -2px ${colors.darkest};
+
+	position: relative;
+
+	> svg {
+		display: block;
+		position: absolute;
+
+		top: 20px;
+		right: 20px;
+	}
+
+	h1 {
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+
+	a {
+		height: 30px;
+		display: flex;
+		align-items: center;
 		list-style: none;
+
+		svg {
+			width: 10px;
+			margin-right: 10px;
+		}
+	}
+
+	a:hover {
+		color: ${colors.primary};
 	}
 `;
