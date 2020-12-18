@@ -8,4 +8,6 @@ export default {
 	darkest: '#222',
 	darker: '#333',
 	dark: '#454545',
+
+	background: '#1a1a1a',
 };

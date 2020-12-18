@@ -6,6 +6,7 @@ import {
 	MainContainer,
 	Header,
 	ToolsCard,
+	Footer,
 } from './styles';
 
 import TextFormat from '../components/TextFormat';
@@ -59,21 +60,22 @@ const Home: React.FC = () => (
 					</a>
 					<a href="/">
 						<ArrowRight />
+						<span>Gerador de quebras de linha</span>
+					</a>
+					<a href="/">
+						<ArrowRight />
 						<span>Gerador de textos em negrito</span>
 					</a>
 					<a href="/">
 						<ArrowRight />
 						<span>Gerador de textos em itálico</span>
 					</a>
-					<a href="/">
-						<ArrowRight />
-						<span>Gerador de textos invertidos</span>
-					</a>
 				</ul>
 			</ToolsCard>
 
 			<TextFormat />
 		</MainContainer>
+		<Footer>@formataTexto</Footer>
 	</Container>
 );
 

@@ -64,8 +64,6 @@ export const Header = styled.header`
 `;
 
 export const MainContainer = styled.main`
-	min-height: 100vh;
-
 	background-image: url('${ToolsBg}');
 	background-repeat: no-repeat;
 	background-position-x: right;
@@ -108,4 +106,10 @@ export const ToolsCard = styled.div`
 	a:hover {
 		color: ${colors.primary};
 	}
+`;
+
+export const Footer = styled.div`
+	background-color: ${colors.background};
+	text-align: center;
+	padding: 20px;
 `;
