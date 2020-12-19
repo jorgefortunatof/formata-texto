@@ -70,7 +70,8 @@
 		"no-unused-expressions": "off",
 		"react/react-in-jsx-scope": "off",
 		"react/jsx-one-expression-per-line": "off",
-		"object-curly-newline": "off"
+		"object-curly-newline": "off",
+		"implicit-arrow-linebreak": "off",
 	},
 	"settings": {
 		"import/resolver": {

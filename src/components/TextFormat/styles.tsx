@@ -3,32 +3,46 @@ import { lighten } from 'polished';
 import colors from '../../styles/colors';
 
 export const Container = styled.div`
+	margin: 80px 40px;
+	color: ${colors.light};
+
+	> h2 {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	> p {
+		margin-bottom: 40px;
+		text-align: center;
+	}
+`;
+
+export const Card = styled.div`
 	background-color: ${colors.darker};
 	border-radius: 12px;
 
-	margin: 140px 90px;
-	padding: 60px 40px;
+	margin-bottom: 60px;
+	padding: 40px 40px;
 `;
 
-export const Title = styled.div`
-	display: flex;
-	align-items: center;
-
+export const Header = styled.div`
 	h1 {
+		color: ${colors.lightest};
 		display: inline;
+		font-size: 25px;
 	}
 
-	svg {
-		width: 24px;
-		margin-right: 20px;
+	p {
+		margin-top: 20px;
 	}
 `;
 
 export const InputContainer = styled.div`
-	margin-top: 40px;
+	margin-top: 20px;
 
 	div {
 		display: flex;
+		flex-wrap: wrap;
 	}
 
 	button {

@@ -19,8 +19,8 @@ import ToolsIcon from '../assets/tools.svg';
 const Home: React.FC = () => (
 	<Container>
 		<Head>
-			<title>Create Next App</title>
-			<link rel="icon" href="/favicon.ico" />
+			<title>FormataTexto</title>
+			<link rel="icon" href="/favicon.svg" />
 		</Head>
 
 		<NavigationBar>
@@ -45,7 +45,7 @@ const Home: React.FC = () => (
 		</Header>
 
 		<MainContainer>
-			<ToolsCard>
+			{/* <ToolsCard>
 				<h1>Nossas Ferramentas</h1>
 				<ToolsIcon />
 
@@ -60,7 +60,7 @@ const Home: React.FC = () => (
 					</a>
 					<a href="/">
 						<ArrowRight />
-						<span>Gerador de quebras de linha</span>
+						<span>Adicionar quebras de linha</span>
 					</a>
 					<a href="/">
 						<ArrowRight />
@@ -71,11 +71,11 @@ const Home: React.FC = () => (
 						<span>Gerador de textos em itálico</span>
 					</a>
 				</ul>
-			</ToolsCard>
+			</ToolsCard> */}
 
 			<TextFormat />
 		</MainContainer>
-		<Footer>@formataTexto</Footer>
+		<Footer>©FormataTexto - 2020</Footer>
 	</Container>
 );
 

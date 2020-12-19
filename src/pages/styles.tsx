@@ -42,7 +42,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-	margin: 90px 0;
+	margin: 120px 0;
 
 	display: flex;
 	justify-content: center;
@@ -67,6 +67,7 @@ export const MainContainer = styled.main`
 	background-image: url('${ToolsBg}');
 	background-repeat: no-repeat;
 	background-position-x: right;
+	background-position-y: top;
 `;
 
 export const ToolsCard = styled.div`
@@ -112,4 +113,6 @@ export const Footer = styled.div`
 	background-color: ${colors.background};
 	text-align: center;
 	padding: 20px;
+
+	font-weight: bold;
 `;
