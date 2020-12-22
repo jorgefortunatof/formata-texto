@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import colors from '../styles/colors';
+import colors from './colors';
 
 import ToolsBg from '../assets/tools-bg.png';
 

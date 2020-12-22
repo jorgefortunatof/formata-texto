@@ -7,7 +7,7 @@ import {
 	Header,
 	ToolsCard,
 	Footer,
-} from './styles';
+} from '../styles/styles';
 
 import TextFormat from '../components/TextFormat';
 
