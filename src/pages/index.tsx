@@ -52,10 +52,6 @@ const Home: React.FC = () => (
 				<ul>
 					<a href="/">
 						<ArrowRight />
-						<span>Formatador de Textos</span>
-					</a>
-					<a href="/">
-						<ArrowRight />
 						<span>Contador de letras, palavras e linhas</span>
 					</a>
 					<a href="/">
