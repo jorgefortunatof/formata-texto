@@ -15,6 +15,10 @@ export const Container = styled.div`
 		margin-bottom: 40px;
 		text-align: center;
 	}
+
+	@media (max-width: 700px){
+		margin: 40px 20px;
+	}
 `;
 
 export const Card = styled.div`
@@ -35,6 +39,12 @@ export const Header = styled.div`
 	p {
 		margin-top: 20px;
 	}
+
+	@media (max-width: 700px){
+		h1{
+			font-size: 20px;
+		}
+	}
 `;
 
 export const InputContainer = styled.div`
@@ -43,6 +53,12 @@ export const InputContainer = styled.div`
 	div {
 		display: flex;
 		flex-wrap: wrap;
+	}
+
+	> span {
+		display: block;
+		margin-top: 10px;
+		color: ${colors.primary};
 	}
 
 	button {

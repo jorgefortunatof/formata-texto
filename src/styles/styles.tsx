@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import colors from './colors';
 
-import ToolsBg from '../assets/tools-bg.png';
-
 export const NavigationBar = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -61,13 +59,17 @@ export const Header = styled.header`
 	h1 + svg {
 		align-self: flex-end;
 	}
-`;
 
-export const MainContainer = styled.main`
-	background-image: url('${ToolsBg}');
-	background-repeat: no-repeat;
-	background-position-x: right;
-	background-position-y: top;
+	@media (max-width: 700px){
+		h1 {
+			font-size: 40px;
+			line-height: 40px;
+		}
+
+		svg {
+			width: 20px;
+		}
+	}
 `;
 
 export const ToolsCard = styled.div`

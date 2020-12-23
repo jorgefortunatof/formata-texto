@@ -1,7 +1,10 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { Container, Card, InputContainer, Header } from './styles';
 
 const TextFormat: React.FC = () => {
+	const textArea = useRef(null);
+
+	const [copySuccessMessage, setCopySuccessMessage] = useState(false);
 	const [text, setText] = useState('');
 
 	const toUpperCase = useCallback(() => {
@@ -24,7 +27,7 @@ const TextFormat: React.FC = () => {
 				.map(word => {
 					if (!word) return word;
 
-					const wordSplited = word.split('');
+					const wordSplited = word.toLowerCase().split('');
 					wordSplited[0] = wordSplited[0].toUpperCase();
 
 					return wordSplited.join('');
@@ -41,7 +44,7 @@ const TextFormat: React.FC = () => {
 			.map(paragraph => {
 				if (!paragraph) return paragraph;
 
-				const paragraphSplited = paragraph.split('');
+				const paragraphSplited = paragraph.toLowerCase().split('');
 				paragraphSplited[0] = paragraphSplited[0].toUpperCase();
 
 				return paragraphSplited.join('');
@@ -68,17 +71,31 @@ const TextFormat: React.FC = () => {
 		);
 	}, [text]);
 
+	const copyToClipboard = useCallback(() => {
+		if (!text) return;
+
+		textArea.current.select();
+		document.execCommand('copy');
+
+		setCopySuccessMessage(true);
+
+		setTimeout(() => {
+			setCopySuccessMessage(false);
+		}, 5000)
+	}, [text]);
+
+
 	return (
 		<Container>
 			<Card>
 				<Header>
 					<h1>
-						Acidentalmente escreveu algo com o Caps Lock ligado, e não quer
+						Acidentalmente escreveu algo com o CapsLock ligado, e não quer ter que
 						escrever tudo de novo?
 					</h1>
 					<p>
-						Insira o seu texto e escolha para que tipo de formato deseja
-						utilizar.
+						Insira seu texto e escolha para que tipo de formato deseja
+						converter.
 					</p>
 				</Header>
 				<InputContainer>
@@ -87,7 +104,7 @@ const TextFormat: React.FC = () => {
 							MAIÚSCULO
 						</button>
 						<button onClick={toLowerCase} type="button">
-							minúscula
+							minúsculo
 						</button>
 						<button onClick={invertText} type="button">
 							Inverter
@@ -103,35 +120,60 @@ const TextFormat: React.FC = () => {
 						</button>
 					</div>
 					<textarea
+						ref={textArea}
 						rows={20}
 						value={text}
 						onChange={event => setText(event.target.value)}
 						placeholder="Cole seu texto aqui..."
 					/>
+
+					<div>
+						<button onClick={copyToClipboard}>Copiar texto</button>
+					</div>
+
+					<span>
+						{copySuccessMessage && "Copiado com sucesso!"}
+					</span>
 				</InputContainer>
 			</Card>
-			<h2>Lorem ipsum dolor</h2>
+			<h2>Formatar texto para maiúsculo</h2>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nulla
-				tortor, ultricies vel molestie eget, imperdiet ut lacus. Praesent porta
-				erat at vestibulum ornare.
+				O formatador de texto para maiúsculo, vai converter os caracteres de qualquer texto que você inserir para caixa alta.
+				Para formatar para maiúsculo, basta colar seu texto na caixa acima e clicar em "MAIÚSCULO".
 			</p>
 
-			<h2>Consectetur adipiscing</h2>
+			<h2>Formatar texto para minúsculo</h2>
 			<p>
-				Lorem vestibulum ornare sit amet, consectetur adipiscing elit. Quisque
-				nulla tortor, ultricies vel molestie eget, imperdiet ut lacus. Praesent
-				porta erat at vestibulum ornare.
+				O Formatador de texto para minúsculo, vai formatar os caracteres do texto que você inserir para caixa baixa.
+				Para formatar para minúsculo, você deve color um texto na caixa acima e clicar em "minúsculo".
 			</p>
 
-			<h2>Ornare adipiscing</h2>
+			<h2>Inverter texto</h2>
 			<p>
-				Lorem vestibulum ornare sit amet, consectetur adipiscing elit. Quisque
-				nulla tortor, ultricies vel molestie eget, imperdiet ut lacus. Praesent
-				porta erat at vestibulum ornare.
+				O inversor de texto, como o nome já sugere, vai inverter a ordem dos caracteres do texto que você inserir.
+				Para inverter textos, basta colar o seu texto na caixa acima e clicar em "inverter".
+			</p>
+
+			<h2>Estilo título</h2>
+			<p>
+				O formatador estilo título, vai converter a primeira letra de cada palavra para caixa alta e vai manter o restante como caixa baixa.
+				Para formatar com estilo título, você deve inserir seu texto na caixa acima <br />e clicar em "Estilo Título".
+			</p>
+
+			<h2>Estilo Parágrafo</h2>
+			<p>
+				O formatador estilo parágrafo, vai converter a primeira letra de cada parágrafo para maiúscula e manter o restante como minúsculo.
+				Para formatar seu texto no estilo parágrafo, você pode colar o texto escolhido na caixa acima e clicar em "Estilo Parágrafo".
+			</p>
+
+			<h2>Inverter caixa</h2>
+			<p>
+				O inversor de caixa, vai converter os caracteres que possuem caixa alta para caixa baixa e os que possuem caixa baixa para caixa alta.
+				Para usar o inversor de caixa basta inserir o texto escolhido na caixa acima <br />e clicar em "Inverter Caixa".
 			</p>
 		</Container>
 	);
 };
+
 
 export default TextFormat;

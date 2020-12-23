@@ -3,9 +3,7 @@ import Head from 'next/head';
 import {
 	NavigationBar,
 	Container,
-	MainContainer,
 	Header,
-	ToolsCard,
 	Footer,
 } from '../styles/styles';
 
@@ -14,13 +12,13 @@ import TextFormat from '../components/TextFormat';
 import ArrowLeft from '../assets/arrow_left.svg';
 import ArrowRight from '../assets/arrow_right.svg';
 
-import ToolsIcon from '../assets/tools.svg';
-
 const Home: React.FC = () => (
 	<Container>
 		<Head>
-			<title>FormataTexto</title>
+			<title>Formata Texto</title>
 			<link rel="icon" href="/favicon.svg" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<meta name="description" content="o formata texto serve para converter, formatar ou inverter caracteres e textos." />
 		</Head>
 
 		<NavigationBar>
@@ -32,7 +30,7 @@ const Home: React.FC = () => (
 				<option value="pt-br" selected>
 					pt-br
 				</option>
-				<option value="en">en</option>
+				{/* <option value="en">en</option> */}
 			</select>
 		</NavigationBar>
 
@@ -44,33 +42,7 @@ const Home: React.FC = () => (
 			<ArrowLeft />
 		</Header>
 
-		<MainContainer>
-			{/* <ToolsCard>
-				<h1>Nossas Ferramentas</h1>
-				<ToolsIcon />
-
-				<ul>
-					<a href="/">
-						<ArrowRight />
-						<span>Contador de letras, palavras e linhas</span>
-					</a>
-					<a href="/">
-						<ArrowRight />
-						<span>Adicionar quebras de linha</span>
-					</a>
-					<a href="/">
-						<ArrowRight />
-						<span>Gerador de textos em negrito</span>
-					</a>
-					<a href="/">
-						<ArrowRight />
-						<span>Gerador de textos em itálico</span>
-					</a>
-				</ul>
-			</ToolsCard> */}
-
-			<TextFormat />
-		</MainContainer>
+		<TextFormat />
 		<Footer>©FormataTexto - 2020</Footer>
 	</Container>
 );
