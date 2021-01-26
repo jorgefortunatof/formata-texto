@@ -16,9 +16,6 @@ const Home: React.FC = () => (
 	<Container>
 		<Head>
 			<title>Formata Texto</title>
-			<link rel="icon" href="/favicon.svg" />
-			<meta name="viewport" content="width=device-width, initial-scale=1" />
-			<meta name="description" content="o formata texto serve para converter, formatar ou inverter caracteres e textos." />
 		</Head>
 
 		<NavigationBar>
@@ -27,7 +24,7 @@ const Home: React.FC = () => (
 			</h1>
 
 			<select name="language">
-				<option value="pt-br" selected>
+				<option defaultValue="pt-br">
 					pt-br
 				</option>
 				{/* <option value="en">en</option> */}

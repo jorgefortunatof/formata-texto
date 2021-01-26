@@ -160,7 +160,7 @@ const TextFormat: React.FC = () => {
 				Para formatar com estilo título, você deve inserir seu texto na caixa acima <br />e clicar em "Estilo Título".
 			</p>
 
-			<h2>Estilo Parágrafo</h2>
+			<h2>Estilo parágrafo</h2>
 			<p>
 				O formatador estilo parágrafo, vai converter a primeira letra de cada parágrafo para maiúscula e manter o restante como minúsculo.
 				Para formatar seu texto no estilo parágrafo, você pode colar o texto escolhido na caixa acima e clicar em "Estilo Parágrafo".
