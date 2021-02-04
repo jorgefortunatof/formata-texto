@@ -15,6 +15,7 @@ const Home: React.FC = () => (
 				name="description"
 				content="o formata texto serve para converter, formatar ou inverter caracteres e textos."
 			/>
+			<meta charSet="UTF-8" />"
 		</Head>
 
 		<NavigationBar>
