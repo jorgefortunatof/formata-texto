@@ -1,11 +1,6 @@
 import Head from 'next/head';
 
-import {
-	NavigationBar,
-	Container,
-	Header,
-	Footer,
-} from '../styles/styles';
+import { NavigationBar, Container, Header, Footer } from '../styles/styles';
 
 import TextFormat from '../components/TextFormat';
 
@@ -23,12 +18,13 @@ const Home: React.FC = () => (
 				Formata<span>Texto</span>
 			</h1>
 
-			<select name="language">
-				<option defaultValue="pt-br">
-					pt-br
-				</option>
-				{/* <option value="en">en</option> */}
-			</select>
+			<label htmlFor="language">
+				language
+				<select defaultValue="pt-br" name="language" id="language">
+					<option value="pt-br">pt-br</option>
+					{/* <option value="en">en</option> */}
+				</select>
+			</label>
 		</NavigationBar>
 
 		<Header>

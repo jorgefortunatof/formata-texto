@@ -16,7 +16,7 @@ export const Container = styled.div`
 		text-align: center;
 	}
 
-	@media (max-width: 700px){
+	@media (max-width: 700px) {
 		margin: 40px 20px;
 	}
 `;
@@ -36,12 +36,13 @@ export const Header = styled.div`
 		font-size: 25px;
 	}
 
-	p {
+	label {
+		display: block;
 		margin-top: 20px;
 	}
 
-	@media (max-width: 700px){
-		h1{
+	@media (max-width: 700px) {
+		h1 {
 			font-size: 20px;
 		}
 	}
@@ -61,7 +62,7 @@ export const InputContainer = styled.div`
 		color: ${colors.primary};
 	}
 
-	button {
+	div:first-child > button {
 		flex: 1;
 		font-size: 18px;
 		padding: 15px;
@@ -87,12 +88,31 @@ export const InputContainer = styled.div`
 		}
 	}
 
+	> button {
+		width: 100%;
+		font-size: 18px;
+		padding: 15px;
+		background-color: ${colors.darkest};
+
+		color: ${colors.lightest};
+		outline: none;
+		border: none;
+		font-weight: bold;
+
+		border-radius: 0 0 6px 6px;
+
+		&:hover {
+			color: ${colors.primary};
+			background-color: ${lighten(0.05, colors.darkest)};
+			cursor: pointer;
+		}
+	}
+
 	textarea {
 		width: 100%;
 		resize: none;
 		outline: none;
 
 		padding: 10px;
-		border-radius: 0 0 6px 6px;
 	}
 `;

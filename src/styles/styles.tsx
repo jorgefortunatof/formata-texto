@@ -9,15 +9,20 @@ export const NavigationBar = styled.div`
 	padding: 10px 30px;
 	border-bottom: 4px solid ${transparentize(0.8, 'black')};
 
-	select {
-		font-size: 16px;
-		background: transparent;
-		color: ${colors.lightest};
-		border: none;
-		outline: none;
+	label {
+		display: flex;
+		color: ${colors.darkest};
 
-		option {
-			background-color: ${colors.dark};
+		select {
+			font-size: 16px;
+			background: transparent;
+			color: ${colors.lightest};
+			border: none;
+			outline: none;
+
+			option {
+				background-color: ${colors.dark};
+			}
 		}
 	}
 
@@ -60,7 +65,7 @@ export const Header = styled.header`
 		align-self: flex-end;
 	}
 
-	@media (max-width: 700px){
+	@media (max-width: 700px) {
 		h1 {
 			font-size: 40px;
 			line-height: 40px;
