@@ -7,9 +7,10 @@ export default class MyDocument extends Document {
 		const originalRenderPage = ctx.renderPage;
 
 		try {
-			ctx.renderPage = () => originalRenderPage({
-				enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
-			});
+			ctx.renderPage = () =>
+				originalRenderPage({
+					enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+				});
 
 			const initialProps = await Document.getInitialProps(ctx);
 			return {
@@ -28,19 +29,15 @@ export default class MyDocument extends Document {
 
 	render() {
 		return (
-			<Html
-				lang="pt-BR"
-			>
+			<Html lang="pt-BR">
 				<Head>
 					<link rel="icon" href="/favicon.svg" />
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<meta name="description" content="o formata texto serve para converter, formatar ou inverter caracteres e textos." />
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
 				</body>
 			</Html>
-		)
+		);
 	}
 }
